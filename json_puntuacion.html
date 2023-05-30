@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<script>
+    const users = {
+        "-zxcvuserid": {
+            "name": "gerard",
+            "total": 0,
+            "pregunta0": {
+                "value": "a"
+            },
+            "pregunta1": {
+                "value": "b"
+            },
+            "pregunta2": {
+                "value": "c"
+            },
+            "pregunta3": {
+                "value": "d"
+            }
+        },
+        "-abcduserid": {
+            "name": "andrei",
+            "total": 0,
+            "pregunta0": {
+                "value": "a"
+            },
+            "pregunta1": {
+                "value": "d"
+            },
+            "pregunta2": {
+                "value": "c"
+            },
+            "pregunta3": {
+                "value": "b"
+            }
+        },
+        "-poiuuserid": {
+            "name": "juan",
+            "total": 0,
+            "pregunta0": {
+                "value": "d"
+            },
+            "pregunta1": {
+                "value": "a"
+            },
+            "pregunta2": {
+                "value": "b"
+            },
+            "pregunta3": {
+                "value": "d"
+            }
+        }
+    };
+    
+    const preguntas = {
+        "pregunta0" : {
+            "correcta": "a",
+        },
+        "pregunta1" : {
+            "correcta": "b"
+        },
+        "pregunta2" : {
+            "correcta": "c"
+        },
+        "pregunta3" : {
+            "correcta": "d"
+        }
+    }
+    
+    let correctas = 0;
+    
+    for (const userid in users) {
+        for (const preguntaid in preguntas)
+        {
+            if (preguntas[preguntaid]["correcta"]==users[userid][preguntaid]["value"])
+            {
+                users[userid]["total"]++;
+               
+            }
+        }
+        console.log(users[userid]["name"]+users[userid]["total"]);
+    }
+
+  
+  
+</script>
